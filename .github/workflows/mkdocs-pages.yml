@@ -45,10 +45,10 @@ jobs:
     steps:
       # Checkout the repository to the GitHub Actions runner
       - name: "🧰 Checkout Source Code"
-        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: "⚙️️ Set up Python"
-        uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
         with:
           # Read python version from a file .python-version
           python-version-file: ".standard-python-version"
@@ -60,7 +60,7 @@ jobs:
         run: echo version="$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")" >> "$GITHUB_OUTPUT"
 
       - name: "⚙️️ Set up cache"
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
         id: cache
         with:
           path: .venv
